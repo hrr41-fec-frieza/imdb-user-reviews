@@ -1,14 +1,16 @@
+import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import UserReview from './UserReview.jsx';
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const $ = require('jquery');
-
-
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { ...props };
+  componentDidMount() {
+    axios({
+      method: 'GET',
+      url: 'http://localhost:65387/api/user-reviews',
+    }).then((response) => {
+      this.setState({ reviews: response.data });
+    });
   }
 
   render() {
@@ -22,9 +24,4 @@ class App extends React.Component {
   }
 }
 
-$.ajax({
-  method: 'GET',
-  url: 'http://localhost:65387/api/user-reviews',
-}).done((reviews) => {
-  ReactDOM.render(<App reviews={reviews} />, document.getElementById('user-reviews-module'));
-});
+ReactDOM.render(<App />, document.getElementById('user-reviews-module'));
