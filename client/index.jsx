@@ -4,6 +4,13 @@ import ReactDOM from 'react-dom';
 import UserReview from './UserReview.jsx';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reviews: [],
+    };
+  }
+
   componentDidMount() {
     axios({
       method: 'GET',
@@ -18,7 +25,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>User Reviews</h2>
-        <UserReview reviews={reviews} />
+        { reviews.length && <UserReview reviews={reviews} />}
       </div>
     );
   }
