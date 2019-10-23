@@ -6,5 +6,7 @@ module.exports = {
   extends: 'airbnb',
   rules: {
     'prefer-destructuring': 'off',
+    'import/extensions': 'off',
+    'react/prop-types': 'off',
   },
 };
