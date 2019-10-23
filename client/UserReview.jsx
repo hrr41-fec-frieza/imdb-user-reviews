@@ -1,5 +1,5 @@
-const React = require('react');
-const moment = require('moment');
+import moment from 'moment';
+import React from 'react';
 
 const UserReview = (props) => {
   const { reviews } = props;
