@@ -24,11 +24,25 @@ const UserReview = (props) => {
       <hr />
       <div>
         {reviews[0].recs}
-        &nbsp;out of&nbsp;
+        &nbsp;
+        out of
+        &nbsp;
         {reviews[0].rectotal}
-        &nbsp;people found this review helpful. Was this review helpful to you?
+        &nbsp;
+        people found this review helpful. Was this review helpful to you?
+        &nbsp;
+        <button>Yes</button>
+        <button>No</button>
+        &nbsp;
+        <a>Report this</a>
       </div>
-
+      <a>Review this title</a>
+      &nbsp;|&nbsp;
+      <a>
+        See all
+        {reviews.length}
+        user reviews »
+      </a>
     </div>
 
   );
