@@ -1,11 +1,10 @@
-const db = require('./database');
-const faker = require('faker');
 const casual = require('casual');
+const db = require('./database');
 
 const seedDatabase = (callback = () => {}) => {
   let sql = 'DROP TABLE IF EXISTS reviews;';
 
-  db.query(sql, (err, data)=> {
+  db.query(sql, (err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -26,7 +25,7 @@ const seedDatabase = (callback = () => {}) => {
     PRIMARY KEY (id)
   );`;
 
-  db.query(sql, (err, data)=> {
+  db.query(sql, (err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -34,21 +33,7 @@ const seedDatabase = (callback = () => {}) => {
     }
   });
 
-  for (let i = 0; i < 100; i++) {
-    // const review = {
-    //   username: {
-    //     faker: 'internet.userName'
-    //   },
-    //   date: {
-    //     casual: `date('YYYYMMDD')`
-    //   },
-    //   rating: {
-    //     casual: integer(0, 10)
-    //   },
-    //   headline: {
-    //     faker: lorem.sentence(10);
-    //   }
-    // }
+  for (let i = 0; i < 100; i += 1) {
     const username = casual.username;
     const date = casual.date('MMDD');
     const rating = casual.integer(0, 10);
@@ -56,7 +41,7 @@ const seedDatabase = (callback = () => {}) => {
     const body = casual.sentences(casual.integer(1, 15));
     const record = `"${username}", "2019${date}", ${rating}, "${headline}", "${body}", b'0', 50, 100`;
     sql = `INSERT INTO reviews (username, date, rating, headline, body, spoilers, recs, rectotal) VALUES(${record})`;
-    db.query(sql, (err, data)=> {
+    db.query(sql, (err, data) => {
       if (err) {
         console.log(err);
       } else {
