@@ -4,8 +4,12 @@ import React from 'react';
 const UserReview = (props) => {
   const { reviews } = props;
   const formattedDate = moment(reviews[0].date).format('D MMMM YYYY');
+  const starsWidth = reviews[0].rating * 10;
   return (
     <div className="user-review-box">
+      <div className="user-review-stars">
+        <div style={{ width: starsWidth }}>&nbsp;</div>
+      </div>
       <span>
         <strong>{ reviews[0].headline }</strong>
         <div className="user-review-byline">
