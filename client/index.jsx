@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     const { reviews } = this.state;
     return (
-      <div>
+      <div className="user-reviews">
         <h2>User Reviews</h2>
         { reviews.length && <UserReview reviews={reviews} />}
       </div>
