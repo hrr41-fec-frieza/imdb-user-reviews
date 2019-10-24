@@ -40,3 +40,18 @@
   font-size: 11px;
   margin-bottom: 12px;
 }
+
+.user-reviews .user-review-stars {
+  background-image: url(https://m.media-amazon.com/images/G/01/imdb/images/tn15/starstiny-3317719365._V_.png);
+  background-position-y: -12px;
+  float: left;
+  height: 12px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.user-reviews .user-review-stars div {
+  background-image: url(https://m.media-amazon.com/images/G/01/imdb/images/tn15/starstiny-3317719365._V_.png);
+  height: 12px;
+  width: 90px;
+}
