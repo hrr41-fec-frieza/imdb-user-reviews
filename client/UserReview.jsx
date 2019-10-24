@@ -5,7 +5,7 @@ const UserReview = (props) => {
   const { reviews } = props;
   const formattedDate = moment(reviews[0].date).format('D MMMM YYYY');
   return (
-    <div>
+    <div className="user-review-box">
       <span>
         <strong>{ reviews[0].headline }</strong>
         <div className="user-review-byline">
@@ -22,15 +22,11 @@ const UserReview = (props) => {
         </div>
       </span>
       <hr />
-      <div>
+      <div className="user-review-recs">
         {reviews[0].recs}
-        &nbsp;
-        out of
-        &nbsp;
+        &nbsp;out of&nbsp;
         {reviews[0].rectotal}
-        &nbsp;
-        people found this review helpful. Was this review helpful to you?
-        &nbsp;
+        &nbsp;people found this review helpful. Was this review helpful to you?&nbsp;
         <button>Yes</button>
         <button>No</button>
         &nbsp;
@@ -39,9 +35,9 @@ const UserReview = (props) => {
       <a>Review this title</a>
       &nbsp;|&nbsp;
       <a>
-        See all
+        See all&nbsp;
         {reviews.length}
-        user reviews »
+        &nbsp;user reviews »
       </a>
     </div>
 
