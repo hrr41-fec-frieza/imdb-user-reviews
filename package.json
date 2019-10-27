@@ -19,6 +19,7 @@
     "@babel/preset-react": "^7.6.3",
     "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
+    "bluebird": "^3.7.1",
     "casual": "^1.6.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -42,10 +43,14 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
+    "jest-environment-enzyme": "^7.1.1",
     "jest-enzyme": "^7.1.1",
     "nodemon": "^1.19.4"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./spec/setup.js"]
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
+    "testEnvironment": "enzyme"
   }
 }
